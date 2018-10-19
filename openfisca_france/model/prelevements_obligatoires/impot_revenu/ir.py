@@ -93,8 +93,13 @@ class age(Variable):
                             )
 
         date_naissance = individu('date_naissance', period)
-        epsilon = timedelta64(1)
-        return (datetime64(period.start) - date_naissance + epsilon).astype('timedelta64[Y]')
+        annee_naissance = date_naissance.astype('datetime64[Y]').astype(int) + 1970
+        mois_naissance = date_naissance.astype('datetime64[M]').astype(int) % 12 + 1
+        jour_naissance = (date_naissance - date_naissance.astype('datetime64[M]') + 1).astype(int)
+
+        age_revolu = (mois_naissance < period.start.month) + (mois_naissance == period.start.month) * (jour_naissance <= period.start.day)
+
+        return (period.start.year - annee_naissance) - where(age_revolu, 0, 1)  # If the birthday is not passed this year, subtract one year
 
 
 class age_en_mois(Variable):
