@@ -5,7 +5,7 @@ import os
 from openfisca_core.taxbenefitsystems import TaxBenefitSystem
 
 from openfisca_france.entities import entities
-from openfisca_france import decompositions, scenarios
+from openfisca_france import scenarios
 from openfisca_france.model.prelevements_obligatoires.prelevements_sociaux.cotisations_sociales import preprocessing
 from openfisca_france.conf.cache_blacklist import cache_blacklist as conf_cache_blacklist
 from openfisca_france.situation_examples import couple
@@ -18,8 +18,6 @@ class FranceTaxBenefitSystem(TaxBenefitSystem):
     """French tax benefit system"""
     CURRENCY = u"€"
     DATA_SOURCES_DIR = os.path.join(COUNTRY_DIR, 'data', 'sources')
-    decomposition_file_path = os.path.join(
-        os.path.dirname(os.path.abspath(decompositions.__file__)), 'decomp.xml')
     preprocess_parameters = staticmethod(preprocessing.preprocess_parameters)
 
     REFORMS_DIR = os.path.join(COUNTRY_DIR, 'reformes')
