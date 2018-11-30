@@ -42,21 +42,6 @@
       ind4:
         activite: etudiant
         date_naissance: '2010-01-01'
-    famille:
-      enfants:
-      - ind2
-      - ind3
-      - ind4
-      parents:
-      - ind0
-      - ind1
-    menage:
-      conjoint: ind1
-      enfants:
-      - ind2
-      - ind3
-      - ind4
-      personne_de_reference: ind0
   output:
     iai: 6678.0
     irpp: -6678.0

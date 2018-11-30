@@ -24,11 +24,6 @@
         date_naissance: '1934-01-01'
         salaire_imposable: 20000.0
         statut_marital: celibataire
-    famille:
-      parents:
-      - ind0
-    menage:
-      personne_de_reference: ind0
   output:
     decote_gain_fiscal: 321.0
     irpp: -0.0

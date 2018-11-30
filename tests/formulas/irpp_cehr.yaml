@@ -17,20 +17,6 @@
         salaire_imposable: 500000
       parent2:
         age: 40
-    familles:
-      famille_0:
-        parents:
-        - parent1
-      famille_1:
-        parents:
-        - parent2
-    menages:
-      menage_0:
-        personne_de_reference:
-        - parent1
-      menage_1:
-        personne_de_reference:
-        - parent2
   output:
     cehr: 0
 
@@ -54,20 +40,6 @@
         salaire_imposable: 1500000
       parent2:
         age: 40
-    familles:
-      famille_0:
-        parents:
-        - parent1
-      famille_1:
-        parents:
-        - parent2
-    menages:
-      menage_0:
-        personne_de_reference:
-        - parent1
-      menage_1:
-        personne_de_reference:
-        - parent2
   output:
     irpp: -616914
 
@@ -84,20 +56,6 @@
       parent2:
         age: 40
         salaire_imposable: 750000
-    familles:
-      famille_0:
-        parents:
-        - parent1
-      famille_1:
-        parents:
-        - parent2
-    menages:
-      menage_0:
-        personne_de_reference:
-        - parent1
-      menage_1:
-        personne_de_reference:
-        - parent2
   output:
     irpp: -610543
 
