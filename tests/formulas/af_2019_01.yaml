@@ -1,0 +1,110 @@
+- name: Cas N°1 Allocations familiales - Couple, 2 enfants de moins de 14 ans
+  description: Montant AF
+  period: 2019-01
+  absolute_error_margin: 0.02
+  input:
+    famille:
+      parents: [parent1, parent2]
+      enfants: [enfant1, enfant2]
+    foyer_fiscal:
+      declarants: [parent1, parent2]
+      personnes_a_charge: [enfant1, enfant2]
+    menage:
+      personne_de_reference: parent1
+      conjoint: parent2
+      enfants: [enfant1, enfant2]
+    individus:
+      parent1:
+        age: 38
+        revenu_assimile_salaire:
+          2015: 40000
+          2016: 40000
+          2017: 40000
+          2018: 40000
+      parent2:
+        age: 35
+        revenu_assimile_salaire:
+          2015: 20000
+          2016: 20000
+          2017: 20000
+          2018: 20000
+      enfant1:
+        age: 12
+      enfant2:
+        age: 10
+  output:
+    af: 131.16 / (1 - 0.005)
+
+- name: Cas N°2 Allocations familiales - Couple, 2 enfants de moins de 14 ans et un enfant de plus de 14 ans
+  description: Montant AF + majoration
+  period: 2019-01
+  absolute_error_margin: 0.02
+  input:
+    famille:
+      parents: [parent1, parent2]
+      enfants: [enfant1, enfant2, enfant3]
+    foyer_fiscal:
+      declarants: [parent1, parent2]
+      personnes_a_charge: [enfant1, enfant2, enfant3]
+    menage:
+      personne_de_reference: parent1
+      conjoint: parent2
+      enfants: [enfant1, enfant2, enfant3]
+    individus:
+      parent1:
+        age: 39
+        revenu_assimile_salaire:
+          2015: 55000
+          2016: 55000
+          2017: 55000
+          2018: 55000
+      parent2:
+        age: 37
+        revenu_assimile_salaire:
+          2015: 35000
+          2016: 35000
+          2017: 35000
+          2018: 35000
+      enfant1:
+        age: 15
+      enfant2:
+        age: 10
+      enfant3:
+        age: 8
+  output:
+    af: 182.39 / (1 - 0.005)
+
+- name: Cas N°3 Allocations familiales - Couple, enfant de moins de 14 ans.
+  description: Montant AF
+  period: 2019-01
+  absolute_error_margin: 0.02
+  input:
+    famille:
+      parents: [parent1, parent2]
+      enfants: [enfant1]
+    foyer_fiscal:
+      declarants: [parent1, parent2]
+      personnes_a_charge: [enfant1]
+    menage:
+      personne_de_reference: parent1
+      conjoint: parent2
+      enfants: [enfant1]
+    individus:
+      parent1:
+        age: 39
+        revenu_assimile_salaire:
+          2015: 85000
+          2016: 85000
+          2017: 85000
+          2018: 85000
+      parent2:
+        age: 37
+        revenu_assimile_salaire:
+          2015: 65000
+          2016: 65000
+          2017: 65000
+          2018: 65000
+      enfant1:
+        age: 13
+  output:
+    af: 0
