@@ -35,7 +35,7 @@
   output:
     af: 131.16 / (1 - 0.005)
 
-- name: Cas N°2 Allocations familiales - Couple, 2 enfants de moins de 14 ans et un enfant de 14 ans
+- name: Cas N°2 Allocations familiales - Couple, 2 enfants de moins de 14 ans et un enfant de plus de 14 ans
   description: Montant AF + majoration
   period: 2019-01
   absolute_error_margin: 0.02
