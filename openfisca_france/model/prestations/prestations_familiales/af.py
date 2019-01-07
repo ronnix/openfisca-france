@@ -380,4 +380,3 @@ class af(Variable):
         af_allocation_forfaitaire = famille('af_allocation_forfaitaire', period)
 
         return af_base + af_majoration + af_allocation_forfaitaire
-
