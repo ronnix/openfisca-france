@@ -187,7 +187,7 @@ class af_allocation_forfaitaire_taux_modulation(Variable):
 
         plafond1 = modulation.plafond_tranche_1 + nb_enf_tot * modulation.majoration_plafond_par_enfant_supplementaire
 
-        plafond2 =  modulation.plafond_tranche_2 + nb_enf_tot * modulation.majoration_plafond_par_enfant_supplementaire
+        plafond2 = modulation.plafond_tranche_2 + nb_enf_tot * modulation.majoration_plafond_par_enfant_supplementaire
 
         taux = (
             (base_ressources <= plafond1) * 1
