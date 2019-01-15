@@ -567,9 +567,10 @@ class aide_logement_neutralisation_rsa(Variable):
         ]
 
     def formula(famille, period, parameters):
-        # Circular definition, as rsa depends on al.
-        # We don't allow it, so default value of rsa will be returned if a recursion is detected.
-        rsa_mois_dernier = famille('rsa', period.last_month, max_nb_cycles = 0)
+        # On s'intéresse aux valeurs antérieures du RSA, qui doivent alors être fournies et non
+        # calculées; le risque est de retourner indéfiniment dans le passé si la formule du RSA
+        # dépend des aides au logement (ce qui est bien le cas).
+        rsa_mois_dernier = famille('rsa', period.last_month, input_only = True)
 
         revenus_a_neutraliser_i = famille.members('revenu_assimile_salaire_apres_abattements', period.n_2)
         revenus_a_neutraliser = famille.sum(revenus_a_neutraliser_i)

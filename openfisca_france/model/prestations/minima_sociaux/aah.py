@@ -154,7 +154,7 @@ class aah_base_ressources_hors_activite_eval_trimestrielle(Variable):
             ]
 
         ressources = sum(
-            [individu(ressource, three_previous_months, options = [ADD]) for ressource in ressources_a_inclure]
+            [individu(ressource, three_previous_months, options = [ADD], input_only = ressource != 'retraite_nette') for ressource in ressources_a_inclure]
             )
 
         return ressources * 4

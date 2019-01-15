@@ -54,14 +54,15 @@ class salaire_de_base(Variable):
 
         # List of variables already calculated. We will need it to remove their holders,
         # that might contain undesired cache
-        requested_variable_names = list(simulation.requested_periods_by_variable_name.keys())
-        if requested_variable_names:
-            requested_variable_names.remove(u'salaire_de_base')
+        # requested_variable_names = list(simulation.requested_periods_by_variable_name.keys())
+        # if requested_variable_names:
+        #     requested_variable_names.remove(u'salaire_de_base')
+        requested_variable_names = []
         # Clean 'requested_periods_by_variable_name', that is used by -core to check for computation cycles.
         # This variable, salaire_de_base, might have been called from variable X,
         # that will be calculated again in our iterations to compute the salaire_net requested
         # as an input variable, hence producing a cycle error
-        simulation.requested_periods_by_variable_name = dict()
+        # simulation.requested_periods_by_variable_name = dict()
 
         def solve_func(net):
             def innerfunc(essai):

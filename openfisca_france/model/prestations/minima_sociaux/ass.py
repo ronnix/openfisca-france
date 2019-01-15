@@ -100,7 +100,7 @@ class ass_base_ressources_individu(Variable):
         # Article R5423-4 du code du travail
         pensions_alimentaires_versees_individu = individu('pensions_alimentaires_versees_individu', previous_year, options = [ADD])
 
-        aah = individu('aah', previous_year, options = [ADD])
+        aah = individu('aah', previous_year, options = [ADD], input_only = True)
         indemnites_stage = individu('indemnites_stage', previous_year, options = [ADD])
         revenus_stage_formation_pro = individu('revenus_stage_formation_pro', previous_year, options = [ADD])
 
