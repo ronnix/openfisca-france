@@ -190,7 +190,7 @@ class af_allocation_forfaitaire_taux_modulation(Variable):
 
         taux = (
             (base_ressources <= plafond_forfaitaire_1) * 1
-            + (base_ressources > plafond_forfaitaire_2) * (base_ressources <= plafond_forfaitaire_2) * modulation.taux_tranche_2
+            + (base_ressources > plafond_forfaitaire_1) * (base_ressources <= plafond_forfaitaire_2) * modulation.taux_tranche_2
             + (base_ressources > plafond_forfaitaire_2) * modulation.taux_tranche_3
             )
 
