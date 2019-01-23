@@ -248,7 +248,8 @@ class cmu_base_ressources_individu(Variable):
             'rsa_base_ressources_patrimoine_individu',
             'salaire_net',
             'rente_accident_travail',
-            ]
+        ]
+
 
         ressources = sum([
             individu(ressource, previous_year, options = [ADD])
